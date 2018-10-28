@@ -1,11 +1,9 @@
-const PubSub = require('../helpers/pub_sub.js');
+import {PubSub} from '../helpers/pub_sub.js';
 
-
-class SelectView {
+export default class SelectView {
   constructor(element) {
     this.element = element;
   }
-
 
   bindEvents() {
     PubSub.subscribe('InstrumentFamilies:data-ready', (evt) => {
@@ -27,5 +25,4 @@ class SelectView {
       this.element.appendChild(option);
     });
   };
-}
-module.exports = SelectView;
+};
